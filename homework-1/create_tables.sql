@@ -1,10 +1,9 @@
--- SQL-команды для создания таблиц
 CREATE TABLE customers_data
 (
 	customer_id varchar(5) PRIMARY KEY,
 	company_name varchar(50),
 	contact_name varchar(50)
-)
+);
 
 CREATE TABLE employees_data
 (
@@ -14,7 +13,8 @@ CREATE TABLE employees_data
 	title varchar(50),
 	birth_date date,
 	notes text
-)
+);
+
 
 CREATE TABLE orders_data
 (
