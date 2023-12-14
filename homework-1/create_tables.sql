@@ -23,4 +23,8 @@ CREATE TABLE orders_data
 	employee_id int REFERENCES employees_data(employee_id),
 	order_date date,
 	ship_city varchar(50)
-)
+);
+
+--select * FROM customers_data;
+--select * FROM employees_data;
+--select * FROM orders_data;
