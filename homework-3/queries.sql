@@ -46,3 +46,20 @@ WHERE customer_id IN (
 /* 4. уникальные названия продуктов, которых заказано ровно 10 единиц
 (количество заказанных единиц см в колонке quantity табл order_details)
 Этот запрос написать именно с использованием подзапроса. */
+
+--вариант с подзапросом
+SELECT product_name
+FROM products
+WHERE product_id IN (
+	SELECT product_id from products
+	INTERSECT
+	SELECT product_id from order_details
+	WHERE quantity = 10
+);
+
+--вариант без подзапроса
+SELECT DISTINCT product_name
+FROM products
+JOIN order_details USING (product_id)
+where order_details.quantity = 10
+
