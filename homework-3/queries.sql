@@ -36,6 +36,12 @@ ORDER BY products.units_in_stock;
 /* 3. Список компаний заказчиков (company_name из табл customers),
 не сделавших ни одного заказа */
 
+SELECT company_name
+FROM customers
+WHERE customer_id IN (
+	select customer_id from customers
+	EXCEPT
+	select customer_id from orders);
 
 /* 4. уникальные названия продуктов, которых заказано ровно 10 единиц
 (количество заказанных единиц см в колонке quantity табл order_details)
